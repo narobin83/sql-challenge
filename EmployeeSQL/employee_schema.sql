@@ -28,3 +28,13 @@ CREATE TABLE dept_emp (
 );
 
 SELECT * FROM dept_emp
+
+CREATE TABLE salaries (
+	emp_no BIGINT NOT NULL,
+	salary BIGINT NOT NULL,
+	from_date DATE NOT NULL,
+	to_date DATE NOT NULL,
+	FOREIGN KEY(emp_no) REFERENCES employees(emp_no)
+);
+
+select * from salaries
