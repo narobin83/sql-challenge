@@ -11,3 +11,17 @@ ORDER BY emp_no
 SELECT * FROM employees
 WHERE DATE_PART('year',hire_date) = 1986
 ORDER BY emp_no;
+
+SELECT dept_manager.dept_no, 
+departments.dept_name,
+dept_manager.emp_no,
+employees.last_name, 
+employees.first_name,
+dept_manager.from_date,
+dept_manager.to_date
+FROM dept_manager
+LEFT JOIN departments
+ON dept_manager.dept_no = departments.dept_no
+LEFT JOIN employees 
+ON dept_manager.emp_no = employees.emp_no
+ORDER BY emp_no
