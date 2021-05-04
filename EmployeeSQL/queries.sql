@@ -25,3 +25,16 @@ ON dept_manager.dept_no = departments.dept_no
 LEFT JOIN employees 
 ON dept_manager.emp_no = employees.emp_no
 ORDER BY emp_no
+
+SELECT
+employees.emp_no,
+employees.last_name,
+employees.first_name,
+dept_emp.dept_no,
+departments.dept_name
+FROM employees 
+INNER JOIN dept_emp ON employees.emp_no=dept_emp.emp_no
+INNER JOIN departments ON departments.dept_no=dept_emp.dept_no
+order by emp_no;
+
+
